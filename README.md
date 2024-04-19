@@ -61,7 +61,7 @@ cd VoiceCraft
 # sudo apt-get install -y nvidia-container-toolkit-base || yay -Syu nvidia-container-toolkit || echo etc...
 
 # 3. First build the docker image
-docker build --tag "voicecraft" .
+docker build --build-arg github_token=<your personal token> --tag "voicecraft" .
 
 # 4. Try to start an existing container otherwise create a new one passing in all GPUs
 ./start-jupyter.sh  # linux
