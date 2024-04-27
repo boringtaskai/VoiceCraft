@@ -1,15 +1,14 @@
 #!/bin/bash
-source ~/miniconda3/etc/profile.d/conda.sh
 conda activate voicecraft
-export CUDA_VISIBLE_DEVICES=0,1,2,3
-export WORLD_SIZE=4
+export CUDA_VISIBLE_DEVICES=0,1
+export WORLD_SIZE=2
 
 dataset=gigaspeech
 mkdir -p ./logs/${dataset}
 
-exp_root="path/to/store/exp_results"
+exp_root="/home/ys/project/datasets/gigaspeech/exported"
 exp_name=e830M
-dataset_dir="path/to/stored_extracted_codes_and_phonemes/xl" # xs if you only extracted xs in previous step
+dataset_dir="/home/ys/project/datasets/gigaspeech/result/xs" # xs if you only extracted xs in previous step
 encodec_codes_folder_name="encodec_16khz_4codebooks"
 
 # export CUDA_LAUNCH_BLOCKING=1 # for debugging
